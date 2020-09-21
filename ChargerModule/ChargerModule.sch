@@ -1,0 +1,497 @@
+EESchema Schematic File Version 4
+EELAYER 30 0
+EELAYER END
+$Descr A4 11693 8268
+encoding utf-8
+Sheet 1 1
+Title "Charger module"
+Date "2020-08-31"
+Rev "00"
+Comp "ESN"
+Comment1 "By Esseiva Nicolas"
+Comment2 ""
+Comment3 ""
+Comment4 "Charger module"
+$EndDescr
+$Comp
+L 0EsseivaN_Lib:CAPA_P C1
+U 1 1 5F4CEB6A
+P 2900 2600
+F 0 "C1" V 2864 2708 60  0000 L CNN
+F 1 "4.7uF" V 2970 2708 60  0000 L CNN
+F 2 "EsseivaN_Lib:C_1206_HandSoldering" H 2900 2600 60  0001 C CNN
+F 3 "" H 2900 2600 60  0000 C CNN
+	1    2900 2600
+	0    1    1    0   
+$EndComp
+$Comp
+L 0EsseivaN_Lib:MCP73832 U1
+U 1 1 5F4D0090
+P 4950 2300
+F 0 "U1" H 4950 2787 60  0000 C CNN
+F 1 "MCP73832" H 4950 2681 60  0000 C CNN
+F 2 "EsseivaN_Lib:SOT-23-5_HandSoldering" H 5000 2400 60  0001 C CNN
+F 3 "" H 5000 2400 60  0001 C CNN
+	1    4950 2300
+	1    0    0    -1  
+$EndComp
+$Comp
+L 0EsseivaN_Lib:LED P1
+U 1 1 5F4D155E
+P 3800 2500
+F 0 "P1" H 3800 2737 60  0000 C CNN
+F 1 "1V8" H 3800 2631 60  0000 C CNN
+F 2 "EsseivaN_Lib:D_0603_HandSoldering" H 3800 2500 60  0001 C CNN
+F 3 "" H 3800 2500 60  0000 C CNN
+	1    3800 2500
+	1    0    0    -1  
+$EndComp
+$Comp
+L 0EsseivaN_Lib:R R1
+U 1 1 5F4D25BB
+P 4200 2500
+F 0 "R1" V 3993 2500 50  0000 C CNN
+F 1 "3k3" V 4084 2500 50  0000 C CNN
+F 2 "EsseivaN_Lib:R_0603_HandSoldering" V 4130 2500 50  0001 C CNN
+F 3 "" H 4200 2500 50  0000 C CNN
+	1    4200 2500
+	0    1    1    0   
+$EndComp
+Wire Wire Line
+	4400 2500 4500 2500
+Wire Wire Line
+	4000 2500 3900 2500
+$Comp
+L 0EsseivaN_Lib:R Rch1
+U 1 1 5F4D478D
+P 5800 2550
+F 0 "Rch1" H 5870 2596 50  0000 L CNN
+F 1 "3k9" H 5870 2505 50  0000 L CNN
+F 2 "EsseivaN_Lib:R_0603_HandSoldering" V 5730 2550 50  0001 C CNN
+F 3 "" H 5800 2550 50  0000 C CNN
+	1    5800 2550
+	1    0    0    -1  
+$EndComp
+Wire Wire Line
+	5800 2350 5800 2300
+Wire Wire Line
+	5800 2300 5400 2300
+Text Notes 5850 2400 0    50   ~ 0
+Ich =\n1000V/Rch [A]
+Wire Wire Line
+	3700 2500 3600 2500
+Wire Wire Line
+	3600 2500 3600 2100
+Wire Wire Line
+	3600 2100 4500 2100
+Wire Wire Line
+	5400 2500 5600 2500
+$Comp
+L 0EsseivaN_Lib:CAPA_P C2
+U 1 1 5F4D688D
+P 6700 2600
+F 0 "C2" V 6664 2708 60  0000 L CNN
+F 1 "4.7uF" V 6770 2708 60  0000 L CNN
+F 2 "EsseivaN_Lib:C_1206_HandSoldering" H 6700 2600 60  0001 C CNN
+F 3 "" H 6700 2600 60  0000 C CNN
+	1    6700 2600
+	0    1    1    0   
+$EndComp
+Wire Wire Line
+	6700 2500 6700 2100
+Wire Wire Line
+	2900 2500 2900 2100
+Wire Wire Line
+	2900 2100 3100 2100
+Connection ~ 3600 2100
+Wire Wire Line
+	2900 2700 2900 3050
+Wire Wire Line
+	6700 3050 6700 2700
+Wire Wire Line
+	5600 2500 5600 3050
+Connection ~ 5600 3050
+Wire Wire Line
+	5600 3050 5800 3050
+Wire Wire Line
+	5800 3050 5800 2750
+Connection ~ 5800 3050
+Wire Wire Line
+	5800 3050 6700 3050
+Connection ~ 2900 2100
+Connection ~ 2900 3050
+Connection ~ 6700 2100
+Connection ~ 6700 3050
+$Comp
+L 0EsseivaN_Lib:GND_ALIM #PWR01
+U 1 1 5F4DE7C0
+P 2900 3150
+F 0 "#PWR01" H 2900 2850 50  0001 C CNN
+F 1 "GND_ALIM" H 2900 2950 50  0001 C CNN
+F 2 "" H 2900 3150 50  0000 C CNN
+F 3 "" H 2900 3150 50  0000 C CNN
+	1    2900 3150
+	1    0    0    -1  
+$EndComp
+Wire Wire Line
+	2900 3150 2900 3050
+Text Label 3200 3050 0    50   ~ 0
+GND
+Text Label 3200 2100 0    50   ~ 0
+Vin
+Text Label 5800 2100 0    50   ~ 0
+Vch
+$Comp
+L 0EsseivaN_Lib:PWR_FLAG-power #FLG0101
+U 1 1 5F4E0E26
+P 3100 2100
+F 0 "#FLG0101" H 3100 2175 50  0001 C CNN
+F 1 "PWR_FLAG-power" H 3100 2250 50  0001 C CNN
+F 2 "" H 3100 2100 50  0001 C CNN
+F 3 "" H 3100 2100 50  0001 C CNN
+	1    3100 2100
+	1    0    0    -1  
+$EndComp
+Connection ~ 3100 2100
+Wire Wire Line
+	3100 2100 3600 2100
+$Comp
+L 0EsseivaN_Lib:LiPo V1
+U 1 1 5F513772
+P 7850 2750
+F 0 "V1" H 7672 2841 60  0000 R CNN
+F 1 "Li Battery" H 7672 2735 60  0000 R CNN
+F 2 "EsseivaN_Lib:18650_Battery_holder" H 7860 2800 60  0001 C CNN
+F 3 "" H 7860 2800 60  0001 C CNN
+F 4 "3.7V" H 7672 2637 50  0000 R CNN "Voltage"
+	1    7850 2750
+	1    0    0    -1  
+$EndComp
+Wire Wire Line
+	6700 2100 7850 2100
+Wire Wire Line
+	7850 2950 7850 3050
+Wire Wire Line
+	6700 3050 7850 3050
+Text Notes 800  3050 2    50   ~ 0
+Vin
+Text Notes 800  3550 2    50   ~ 0
+GND
+Wire Wire Line
+	2900 3050 3450 3050
+$Comp
+L 0EsseivaN_Lib:CAPA_P C3
+U 1 1 5F3E0A27
+P 4700 4600
+F 0 "C3" V 4664 4708 60  0000 L CNN
+F 1 "10uF" V 4770 4708 60  0000 L CNN
+F 2 "EsseivaN_Lib:C_0805_HandSoldering" H 4700 4600 60  0001 C CNN
+F 3 "" H 4700 4600 60  0000 C CNN
+	1    4700 4600
+	0    1    1    0   
+$EndComp
+$Comp
+L 0EsseivaN_Lib:FUSE F1
+U 1 1 5F3F134F
+P 7850 2350
+F 0 "F1" V 7903 2282 60  0000 R CNN
+F 1 "630mA" V 7797 2282 60  0000 R CNN
+F 2 "EsseivaN_Lib:Fuse_SMD1206_HandSoldering" H 7850 2350 60  0001 C CNN
+F 3 "" H 7850 2350 60  0000 C CNN
+	1    7850 2350
+	0    -1   -1   0   
+$EndComp
+$Comp
+L 0EsseivaN_Lib:R R2
+U 1 1 5F3F8490
+P 6600 4400
+F 0 "R2" H 6670 4446 50  0000 L CNN
+F 1 "4k7" H 6670 4355 50  0000 L CNN
+F 2 "EsseivaN_Lib:R_0603_HandSoldering" V 6530 4400 50  0001 C CNN
+F 3 "" H 6600 4400 50  0000 C CNN
+	1    6600 4400
+	1    0    0    -1  
+$EndComp
+$Comp
+L 0EsseivaN_Lib:MOSFET-P T3
+U 1 1 5F3FF331
+P 7500 4100
+F 0 "T3" H 7500 4387 60  0000 C CNN
+F 1 "SI2333" H 7500 4281 60  0000 C CNN
+F 2 "EsseivaN_Lib:SOT-23_Handsoldering" H 7500 4075 60  0001 C CNN
+F 3 "" H 7500 4075 60  0001 C CNN
+	1    7500 4100
+	-1   0    0    -1  
+$EndComp
+$Comp
+L 0EsseivaN_Lib:MOSFET-P T1
+U 1 1 5F4005DE
+P 4250 4100
+F 0 "T1" H 4250 4387 60  0000 C CNN
+F 1 "SI2333" H 4250 4281 60  0000 C CNN
+F 2 "EsseivaN_Lib:SOT-23_Handsoldering" H 4250 4075 60  0001 C CNN
+F 3 "" H 4250 4075 60  0001 C CNN
+	1    4250 4100
+	1    0    0    -1  
+$EndComp
+$Comp
+L 0EsseivaN_Lib:MOSFET-N T2
+U 1 1 5F40185E
+P 7400 5000
+F 0 "T2" V 7347 5128 60  0000 L CNN
+F 1 "FDN337" V 7453 5128 60  0000 L CNN
+F 2 "EsseivaN_Lib:SOT-23_Handsoldering" H 7400 4975 60  0001 C CNN
+F 3 "" H 7400 4975 60  0001 C CNN
+	1    7400 5000
+	0    1    1    0   
+$EndComp
+Wire Wire Line
+	4700 4500 4700 4100
+Wire Wire Line
+	4700 4700 4700 5300
+Wire Wire Line
+	4700 4100 4450 4100
+Connection ~ 4700 4100
+Wire Wire Line
+	4700 5300 4350 5300
+Connection ~ 4700 5300
+Wire Wire Line
+	6000 5250 6000 5300
+Wire Wire Line
+	4700 5300 6000 5300
+Wire Wire Line
+	5500 4750 5250 4750
+Wire Wire Line
+	5250 4750 5250 4100
+Wire Wire Line
+	4700 4100 5250 4100
+Wire Wire Line
+	5250 4100 6600 4100
+Connection ~ 5250 4100
+Connection ~ 6600 4100
+Wire Wire Line
+	6600 4200 6600 4100
+Wire Wire Line
+	6600 4600 6600 4750
+Wire Wire Line
+	6600 4750 6500 4750
+$Comp
+L 0EsseivaN_Lib:R R3
+U 1 1 5F5241CC
+P 7050 4400
+F 0 "R3" H 7120 4446 50  0000 L CNN
+F 1 "100k" H 7120 4355 50  0000 L CNN
+F 2 "EsseivaN_Lib:R_0805_HandSoldering" V 6980 4400 50  0001 C CNN
+F 3 "" H 7050 4400 50  0000 C CNN
+	1    7050 4400
+	1    0    0    -1  
+$EndComp
+Wire Wire Line
+	7050 4200 7050 4100
+Connection ~ 7050 4100
+Wire Wire Line
+	7050 4100 7300 4100
+Wire Wire Line
+	7050 4600 7050 4650
+Wire Wire Line
+	7050 4650 7400 4650
+Wire Wire Line
+	7400 4650 7400 4300
+Wire Wire Line
+	7400 4650 7400 4800
+Connection ~ 7400 4650
+Wire Wire Line
+	6000 5300 7400 5300
+Wire Wire Line
+	7400 5300 7400 5200
+Connection ~ 6000 5300
+Wire Wire Line
+	7200 5100 6600 5100
+Wire Wire Line
+	6600 5100 6600 4750
+Connection ~ 6600 4750
+Wire Wire Line
+	8250 4300 7700 4300
+Wire Wire Line
+	7700 4300 7700 4750
+Wire Wire Line
+	8650 4500 8650 4600
+Wire Wire Line
+	8650 5300 7400 5300
+Connection ~ 7400 5300
+$Comp
+L 0EsseivaN_Lib:CAPA C4
+U 1 1 5F539944
+P 9350 4600
+F 0 "C4" V 9297 4708 60  0000 L CNN
+F 1 "100nF" V 9403 4708 60  0000 L CNN
+F 2 "EsseivaN_Lib:C_0805_HandSoldering" H 9350 4600 60  0001 C CNN
+F 3 "" H 9350 4600 60  0000 C CNN
+	1    9350 4600
+	0    1    1    0   
+$EndComp
+Wire Wire Line
+	9050 4200 9350 4200
+Wire Wire Line
+	9350 4200 9350 4500
+Wire Wire Line
+	9350 4700 9350 5300
+Wire Wire Line
+	9350 5300 8650 5300
+Connection ~ 8650 5300
+$Comp
+L 0EsseivaN_Lib:NCP114 U2
+U 1 1 5F409A59
+P 8650 4200
+F 0 "U2" H 8650 4565 50  0000 C CNN
+F 1 "NCP114 3V3" H 8650 4474 50  0000 C CNN
+F 2 "EsseivaN_Lib:SOT-23-5_HandSoldering" H 8550 4200 50  0001 C CNN
+F 3 "" H 8550 4200 50  0001 C CNN
+	1    8650 4200
+	1    0    0    -1  
+$EndComp
+Wire Wire Line
+	4350 4300 4350 5300
+Connection ~ 4350 5300
+Wire Wire Line
+	4350 5300 3450 5300
+Text Label 3550 5300 0    50   ~ 0
+GND
+Text Label 7800 4100 0    50   ~ 0
+VBAT
+Text Label 9150 4200 0    50   ~ 0
+VCC_3V3
+Connection ~ 9350 4200
+Wire Wire Line
+	7700 4100 8000 4100
+Connection ~ 8000 4100
+Wire Wire Line
+	8000 4100 8150 4100
+Wire Wire Line
+	8800 4500 8800 4600
+Wire Wire Line
+	8800 4600 8650 4600
+Connection ~ 8650 4600
+Wire Wire Line
+	8650 4600 8650 5300
+$Comp
+L 0EsseivaN_Lib:PWR_FLAG-power #FLG0103
+U 1 1 5F583B1D
+P 8000 4050
+F 0 "#FLG0103" H 8000 4125 50  0001 C CNN
+F 1 "PWR_FLAG-power" H 8000 4200 50  0001 C CNN
+F 2 "" H 8000 4050 50  0001 C CNN
+F 3 "" H 8000 4050 50  0001 C CNN
+	1    8000 4050
+	1    0    0    -1  
+$EndComp
+Wire Wire Line
+	8000 4050 8000 4100
+Text Label 6700 4750 0    50   ~ 0
+~RST
+Wire Wire Line
+	6600 4100 7050 4100
+Wire Wire Line
+	7700 4750 6900 4750
+Wire Wire Line
+	9350 4200 9800 4200
+$Comp
+L 0EsseivaN_Lib:MCP121 U3
+U 1 1 5F3F7101
+P 6000 4750
+F 0 "U3" H 6000 5037 60  0000 C CNN
+F 1 "MCP121" H 6000 4931 60  0000 C CNN
+F 2 "EsseivaN_Lib:SOT-23_Handsoldering" H 6000 4750 60  0001 C CNN
+F 3 "" H 6000 4750 60  0001 C CNN
+	1    6000 4750
+	1    0    0    -1  
+$EndComp
+Wire Wire Line
+	7850 2150 7850 2100
+Wire Wire Line
+	7850 2100 8300 2100
+Wire Wire Line
+	8300 2100 8300 3300
+Wire Wire Line
+	8300 3300 3650 3300
+Wire Wire Line
+	3650 3300 3650 4100
+Wire Wire Line
+	3650 4100 4050 4100
+Connection ~ 7850 2100
+Wire Wire Line
+	3450 3050 3450 5300
+Connection ~ 3450 3050
+Wire Wire Line
+	3450 3050 5600 3050
+Wire Wire Line
+	5400 2100 6700 2100
+Wire Wire Line
+	1100 3050 1450 3050
+Wire Wire Line
+	1450 3050 1450 2100
+Wire Wire Line
+	1450 2100 2900 2100
+Wire Wire Line
+	1650 3050 2900 3050
+$Comp
+L 0EsseivaN_Lib:MicroMatch_6P_Male J1
+U 1 1 5F5CBC19
+P 900 3300
+F 0 "J1" H 817 3765 50  0000 C CNN
+F 1 "Connector" H 817 3674 50  0000 C CNN
+F 2 "EsseivaN_Lib:MicroMatch_6P_Male" H 817 2917 50  0001 C CNN
+F 3 "" H 750 3150 50  0000 C CNN
+	1    900  3300
+	1    0    0    -1  
+$EndComp
+Wire Wire Line
+	1100 3550 1650 3550
+Wire Wire Line
+	1650 3550 1650 3050
+Wire Wire Line
+	1100 3150 2000 3150
+Wire Wire Line
+	2000 3150 2000 3650
+Wire Wire Line
+	2000 3650 9800 3650
+Wire Wire Line
+	9800 3650 9800 4200
+Wire Wire Line
+	1100 3250 1950 3250
+Wire Wire Line
+	1950 3250 1950 3700
+Wire Wire Line
+	1950 3700 8150 3700
+Wire Wire Line
+	8150 3700 8150 4100
+Connection ~ 8150 4100
+Wire Wire Line
+	8150 4100 8250 4100
+Wire Wire Line
+	6900 4750 6900 3750
+Wire Wire Line
+	6900 3750 1900 3750
+Wire Wire Line
+	1900 3750 1900 3350
+Wire Wire Line
+	1900 3350 1100 3350
+Connection ~ 6900 4750
+Wire Wire Line
+	6900 4750 6600 4750
+Wire Wire Line
+	3650 3300 2050 3300
+Wire Wire Line
+	2050 3300 2050 3450
+Wire Wire Line
+	2050 3450 1100 3450
+Connection ~ 3650 3300
+Text Notes 800  3450 2    50   ~ 0
+Vch
+Text Notes 800  3350 2    50   ~ 0
+~RST
+Text Notes 800  3250 2    50   ~ 0
+Vbat
+Text Notes 800  3150 2    50   ~ 0
+Vcc
+$EndSCHEMATC
