@@ -122,17 +122,6 @@ Connection ~ 2900 2100
 Connection ~ 2900 3050
 Connection ~ 6700 2100
 Connection ~ 6700 3050
-$Comp
-L 0EsseivaN_Lib:GND_ALIM #PWR01
-U 1 1 5F4DE7C0
-P 2900 3150
-F 0 "#PWR01" H 2900 2850 50  0001 C CNN
-F 1 "GND_ALIM" H 2900 2950 50  0001 C CNN
-F 2 "" H 2900 3150 50  0000 C CNN
-F 3 "" H 2900 3150 50  0000 C CNN
-	1    2900 3150
-	1    0    0    -1  
-$EndComp
 Wire Wire Line
 	2900 3150 2900 3050
 Text Label 3200 3050 0    50   ~ 0
@@ -429,8 +418,6 @@ Wire Wire Line
 Wire Wire Line
 	1100 3050 1450 3050
 Wire Wire Line
-	1450 3050 1450 2100
-Wire Wire Line
 	1450 2100 2900 2100
 Wire Wire Line
 	1650 3050 2900 3050
@@ -494,4 +481,48 @@ Text Notes 800  3250 2    50   ~ 0
 Vbat
 Text Notes 800  3150 2    50   ~ 0
 Vcc
+$Comp
+L 0EsseivaN_Lib:CONN_01X02 J2
+U 1 1 5F6B415A
+P 900 2500
+F 0 "J2" H 817 2765 50  0000 C CNN
+F 1 "Power input" H 817 2674 50  0000 C CNN
+F 2 "EsseivaN_Lib:WireConn_02" H 900 2300 50  0001 C CNN
+F 3 "" H 1050 2250 50  0000 C CNN
+	1    900  2500
+	-1   0    0    -1  
+$EndComp
+Connection ~ 1450 2450
+Wire Wire Line
+	1450 2450 1450 2100
+Wire Wire Line
+	1450 2450 1450 3050
+Wire Wire Line
+	1100 2550 1200 2550
+$Comp
+L 0EsseivaN_Lib:GND #PWR0101
+U 1 1 5F6D7921
+P 2900 3150
+F 0 "#PWR0101" H 2900 2850 50  0001 C CNN
+F 1 "GND" H 2900 2950 50  0001 C CNN
+F 2 "" H 2900 3150 50  0000 C CNN
+F 3 "" H 2900 3150 50  0000 C CNN
+	1    2900 3150
+	1    0    0    -1  
+$EndComp
+$Comp
+L 0EsseivaN_Lib:GND #PWR0102
+U 1 1 5F6D8F73
+P 1200 2650
+F 0 "#PWR0102" H 1200 2350 50  0001 C CNN
+F 1 "GND" H 1200 2450 50  0001 C CNN
+F 2 "" H 1200 2650 50  0000 C CNN
+F 3 "" H 1200 2650 50  0000 C CNN
+	1    1200 2650
+	1    0    0    -1  
+$EndComp
+Wire Wire Line
+	1200 2550 1200 2650
+Wire Wire Line
+	1100 2450 1450 2450
 $EndSCHEMATC
