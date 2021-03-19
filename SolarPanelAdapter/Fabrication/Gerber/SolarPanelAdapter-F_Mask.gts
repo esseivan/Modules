@@ -1,0 +1,25 @@
+G04 #@! TF.GenerationSoftware,KiCad,Pcbnew,(5.1.6)-1*
+G04 #@! TF.CreationDate,2020-10-13T20:44:17+02:00*
+G04 #@! TF.ProjectId,SolarPanelAdapter,536f6c61-7250-4616-9e65-6c4164617074,rev?*
+G04 #@! TF.SameCoordinates,PX7ed6b40PY53ec600*
+G04 #@! TF.FileFunction,Soldermask,Top*
+G04 #@! TF.FilePolarity,Negative*
+%FSLAX46Y46*%
+G04 Gerber Fmt 4.6, Leading zero omitted, Abs format (unit mm)*
+G04 Created by KiCad (PCBNEW (5.1.6)-1) date 2020-10-13 20:44:17*
+%MOMM*%
+%LPD*%
+G01*
+G04 APERTURE LIST*
+%ADD10R,3.500000X1.600000*%
+%ADD11R,4.100000X2.100000*%
+G04 APERTURE END LIST*
+D10*
+X3550000Y-7405000D03*
+X3550000Y-4865000D03*
+X8450000Y-6135000D03*
+X8450000Y-3595000D03*
+D11*
+X15000000Y-7405000D03*
+X15000000Y-3595000D03*
+M02*
